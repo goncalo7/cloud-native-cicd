@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="$(dirname "$dir")"
+NAME=$(cat name.txt)
 if [ -z "$(git status --porcelain)" ]; then 
   VERSION=$(cat version.txt)
   NEWVERSION=$(./release_version.sh -p $VERSION)
