@@ -8,7 +8,7 @@ if [ -z "$(git status --porcelain)" ]; then
   docker build . --tag 0.0.0.0:5000/$NAME:$NEWVERSION
   echo $NEWVERSION > version.txt
   docker push 0.0.0.0:5000/backend:$NEWVERSION
-  git tag $NAME:$NEWVERSION 
+  git tag $NAME-$NEWVERSION 
   git add .
   git commit -m "bump $NAME version to $NEWVERSION"
   git push 
