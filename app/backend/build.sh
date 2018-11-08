@@ -7,7 +7,7 @@ if [ -z "$(git status --porcelain)" ]; then
   echo creating version $NEWVERSION
   docker build . --tag 0.0.0.0:5000/$NAME:$NEWVERSION
   git tag $NAME-$NEWVERSION
-  git push tags
+  git push --tags
   echo $NEWVERSION > version.txt
   docker push 0.0.0.0:5000/backend:$NEWVERSION
 else 
